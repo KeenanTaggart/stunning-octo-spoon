@@ -13,3 +13,23 @@ int eulerFirst()
    }  
    return endSum;
 }
+
+// Returns the sum of all even numbers (below 4 million) in the
+// Fibonacci sequence
+int eulerSecond()
+{
+   int endSum = 0,
+       firstNum = 1,
+       secondNum = 2,
+       helperNum;  // Holds values during computation of next step in sequence
+
+   do
+   {
+	if (secondNum % 2 == 0)
+	   { endSum += secondNum; }
+	helperNum = secondNum;
+	secondNum += firstNum;
+	firstNum = helperNum;
+   }while (secondNum < 4000000);
+   return endSum; 
+}

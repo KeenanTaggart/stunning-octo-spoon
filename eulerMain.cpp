@@ -5,6 +5,7 @@
 
 int main()
 {
-   std::cout << eulerFirst() << std::endl;
+   std::cout << eulerFirst() << std::endl
+	     << eulerSecond() << std::endl;
    return 0;
 }
