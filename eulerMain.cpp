@@ -6,6 +6,7 @@
 int main()
 {
    std::cout << eulerFirst() << std::endl
-	     << eulerSecond() << std::endl;
+	     << eulerSecond() << std::endl
+	     << eulerThird() << std::endl;
    return 0;
 }

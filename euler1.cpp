@@ -37,6 +37,24 @@ int eulerSecond()
 // Returns the largest prime factor of the number 600851475143
 long eulerThird()
 {
-   long const TEST_NUM = 600851475143;
-   return TEST_NUM;
+   long testNum = 600851475143;
+   //long testNum = 13195;  // Test to see that program executes, not a memory leak
+   //long loopTarget = (testNum / 2) + 1;  // A prime factor can never be larger than half the original value
+   long largestFactor = 1;
+
+   for (long i=2; i <= testNum; i++)
+   {
+	bool isPrime = true;	
+	for (long j=2; j < i; j++)
+	{
+	   if ((i % j == 0) && (j != i))
+	      {	isPrime = false; }
+	}
+	if (isPrime && (testNum % i == 0))
+	{ 
+	   largestFactor = i;
+	   testNum /= i;
+	} 	
+   }
+   return largestFactor;
 }
