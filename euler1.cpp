@@ -33,3 +33,10 @@ int eulerSecond()
    }while (secondNum < 4000000);
    return endSum; 
 }
+
+// Returns the largest prime factor of the number 600851475143
+long eulerThird()
+{
+   long const TEST_NUM = 600851475143;
+   return TEST_NUM;
+}
