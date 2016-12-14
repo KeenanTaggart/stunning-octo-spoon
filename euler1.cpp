@@ -1,6 +1,8 @@
 
 
 #include "euler1.hpp"
+#include <string>
+#include <algorithm>
 
 // Returns the sum of all the multiples of 3 or 5 below 1000
 int eulerFirst()
@@ -57,4 +59,27 @@ long eulerThird()
 	} 	
    }
    return largestFactor;
+}
+
+// Returns the largest palindrome product of two 3-digit numbers
+int eulerFourth()
+{
+   int largestPalindrome = 0;
+   int testProd;
+   std::string originalProd,
+	       reverseProd;
+   for (int i=100; i<1000; i++)
+   {
+	for (int j=100; j<1000; j++)
+	{
+	   testProd = i * j; 
+	   originalProd = std::to_string(testProd);
+	   reverseProd = originalProd;
+	   std::reverse(reverseProd.begin(), reverseProd.end());
+
+	   if ((originalProd == reverseProd) && (testProd > largestPalindrome))
+	   { largestPalindrome = testProd; }
+	}
+   }
+   return largestPalindrome;
 }

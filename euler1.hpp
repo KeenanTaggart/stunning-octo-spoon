@@ -9,3 +9,4 @@
 int eulerFirst();
 int eulerSecond();
 long eulerThird();
+int eulerFourth();
