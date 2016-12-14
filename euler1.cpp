@@ -83,3 +83,26 @@ int eulerFourth()
    }
    return largestPalindrome;
 }
+
+// Returns the smallest positive number that is evenly divisible by all the numbers from 1 to 20
+int eulerFifth()
+{
+   int dividend = 21;
+   bool isFinished = false;
+
+   while (isFinished == false)
+   {
+	bool isDivisible = true;
+	for (int i=1; i<21; i++)
+	{
+	   if (dividend % i != 0)
+	   { isDivisible = false; }
+	}	
+
+	if (isDivisible)
+	{ isFinished = true; }
+	else
+	{ dividend++; }
+   }
+   return dividend;
+}
