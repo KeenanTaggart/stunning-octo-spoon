@@ -10,6 +10,7 @@ int main()
 	     << "Problem 3: " << eulerThird() << std::endl
 	     // << "Problem 4: " << eulerFourth() << std::endl
 	     // << "Problem 5: " << eulerFifth() << std::endl
-	     << "Problem 6: " << eulerSixth() << std::endl;
+	     << "Problem 6: " << eulerSixth() << std::endl
+	     << "Problem 7: " << euler7() << std::endl;
    return 0;
 }

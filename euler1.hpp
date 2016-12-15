@@ -12,3 +12,4 @@ long eulerThird();
 int eulerFourth();
 int eulerFifth();
 long eulerSixth();
+long euler7();

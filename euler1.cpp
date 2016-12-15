@@ -122,3 +122,26 @@ long eulerSixth()
 
    return sumSquared - squaresSum;
 }
+
+// Returns the 10,001st prime number
+long euler7()
+{
+   long primeCandidate = 3;
+   int primeCount = 1; // starts at 1 to account for '2' which we skip
+
+   while (primeCount < 10001)
+   {
+	bool isPrime = true;
+	for (long i=2; i<primeCandidate; i++)
+	{
+	   if (primeCandidate % i == 0)
+	   { isPrime = false; } 
+	}		
+	if (isPrime)
+	{ primeCount++; }
+
+	if (primeCount < 10001)
+	{ primeCandidate++; }
+   }
+   return primeCandidate;
+}
