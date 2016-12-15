@@ -5,10 +5,11 @@
 
 int main()
 {
-   std::cout << eulerFirst() << std::endl
-	     << eulerSecond() << std::endl
-	     << eulerThird() << std::endl
-	     << eulerFourth() << std::endl
-	     << eulerFifth() << std::endl;
+   std::cout << "Problem 1: " << eulerFirst() << std::endl
+	     << "Problem 2: " << eulerSecond() << std::endl
+	     << "Problem 3: " << eulerThird() << std::endl
+	     // << "Problem 4: " << eulerFourth() << std::endl
+	     // << "Problem 5: " << eulerFifth() << std::endl
+	     << "Problem 6: " << eulerSixth() << std::endl;
    return 0;
 }

@@ -106,3 +106,19 @@ int eulerFifth()
    }
    return dividend;
 }
+
+// Returns the difference between the sum of the squares of the first hundred natural numbers
+// and the sum of the first hundred natural numbers squared
+long eulerSixth()
+{
+   long squaresSum = 0,
+        sumSquared = 0;
+   for (int i=1; i<101; i++)
+   {
+	squaresSum += (i * i);
+	sumSquared += i;
+   } 
+   sumSquared *= sumSquared;
+
+   return sumSquared - squaresSum;
+}
