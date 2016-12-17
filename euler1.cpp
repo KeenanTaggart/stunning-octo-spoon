@@ -1,8 +1,10 @@
 
 
 #include "euler1.hpp"
+#include <iostream>
 #include <string>
 #include <algorithm>
+#include <fstream>
 
 // Returns the sum of all the multiples of 3 or 5 below 1000
 int eulerFirst()
@@ -144,4 +146,31 @@ long euler7()
 	{ primeCandidate++; }
    }
    return primeCandidate;
+}
+
+// Returns the greatest product of 13 adjacent digits in a 1000 digit number
+long euler8()
+{
+   long maximumProd = 1;
+   std::ifstream inputFile;
+   inputFile.open("eul8.txt");
+   char inputDigit;
+   int placement = 0;  // Start position when reading from file. Increases until all adjacent groups of 13 are read
+
+   while (placement < 988)
+   {
+	long testProd = 1;
+	inputFile.seekg(placement);
+	for (int i=0; i<13; i++)
+	{
+	   inputFile >> inputDigit;
+	   int convDig = inputDigit - '0';
+	   testProd *= convDig;
+	}
+	
+	if (testProd > maximumProd)
+	{ maximumProd = testProd; }
+	placement++;
+   }
+   return maximumProd;
 }
