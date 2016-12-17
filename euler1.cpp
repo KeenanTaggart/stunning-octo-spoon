@@ -5,6 +5,7 @@
 #include <string>
 #include <algorithm>
 #include <fstream>
+#include <cmath>
 
 // Returns the sum of all the multiples of 3 or 5 below 1000
 int eulerFirst()
@@ -173,4 +174,50 @@ long euler8()
 	placement++;
    }
    return maximumProd;
+}
+
+// Returns the product of abc where a, b, and c are natural numbers where a^2 + b^2 = c^2 and a + b + c = 1000
+int euler9()
+{
+   int a, b, c;  // For Euclid's formula
+   int finalProd;
+   for (int n=1; n<1000; n++)
+   {
+	for (int m=n+1; m<1000; m++)
+	{
+	   a = (m * m) - (n * n);
+	   b = 2 * m * n;
+	   c = (m * m) + (n * n);
+	   if (a + b + c == 1000)
+	   { finalProd = a * b * c; } 
+	}
+   }
+   return finalProd;
+}
+
+// Returns the sum of all the primes below two million
+long euler10()
+{
+   int const primeTarget = 2000000;
+   long primeSum = 2; // Starts by accounting for '2'
+
+   for (int i=3; i<primeTarget; i++)
+   {
+	bool isPrime = true;
+	if (i % 2 == 0)
+	{ isPrime = false; }
+	else
+	{
+	   for (int j=2; j<(int(sqrt(double(i)))+2); j++)
+	   {
+	      if (i % j == 0)
+	      { isPrime = false; }
+	   }
+	}
+	if (isPrime)
+	{ 
+	   primeSum += i; 
+	}
+   }
+   return primeSum;
 }
