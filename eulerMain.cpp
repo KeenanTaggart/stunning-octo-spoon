@@ -14,6 +14,7 @@ int main()
 	     // << "Problem 7: " << euler7() << std::endl;
 	     // << "Problem 8: " << euler8() << std::endl;
 	     // << "Problem 9: " << euler9() << std::endl;
-	     << "Problem 10: " << euler10() << std::endl;
+	     // << "Problem 10: " << euler10() << std::endl;
+   	     << "Problem 11: " << euler11() << std::endl;
    return 0;
 }

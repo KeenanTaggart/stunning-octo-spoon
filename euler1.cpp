@@ -221,3 +221,58 @@ long euler10()
    }
    return primeSum;
 }
+
+// Returns the greatest product of any 4 values (in the 20x20 grid) whether horizontal, verticle, or diagonal
+int euler11()
+{
+   std::ifstream inputFile;
+   inputFile.open("eul11.txt");
+   int intGrid[20][20];
+   int highProd = 1;
+
+   for (int i=0; i<20; i++)  // Populates 2-dimensional array with values from 20x20 grid
+   {
+	for (int j=0; j<20; j++)
+	{
+	   inputFile >> intGrid[i][j];
+	}
+   }  
+     
+   for (int i=0; i<20; i++) // Checks horizontal products
+   {
+	for (int j=0; j<17; j++)
+	{
+	   int testVal = intGrid[i][j] * intGrid[i][j+1] * intGrid[i][j+2] * intGrid[i][j+3]; 
+	   if (testVal > highProd)
+		{ highProd = testVal; }
+	}	
+   }
+   for (int i=0; i<17; i++) // Checks vertical products
+   {
+	for (int j=0; j<20; j++)
+	{
+	   int testVal = intGrid[i][j] * intGrid[i+1][j] * intGrid[i+2][j] * intGrid[i+3][j]; 
+	   if (testVal > highProd)
+		{ highProd = testVal; }
+	}	
+   }
+   for (int i=0; i<17; i++) // Checks diagonal descending products
+   {
+	for (int j=0; j<17; j++)
+	{
+	   int testVal = intGrid[i][j] * intGrid[i+1][j+1] * intGrid[i+2][j+2] * intGrid[i+3][j+3]; 
+	   if (testVal > highProd)
+		{ highProd = testVal; }
+	}	
+   }
+   for (int i=0; i<17; i++) // Checks diagonal descending products
+   {
+	for (int j=3; j<20; j++)
+	{
+	   int testVal = intGrid[i][j] * intGrid[i+1][j-1] * intGrid[i+2][j-2] * intGrid[i+3][j-3]; 
+	   if (testVal > highProd)
+		{ highProd = testVal; }
+	}	
+   }
+   return highProd; 
+}
