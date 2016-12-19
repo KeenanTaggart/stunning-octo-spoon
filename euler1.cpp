@@ -265,7 +265,7 @@ int euler11()
 		{ highProd = testVal; }
 	}	
    }
-   for (int i=0; i<17; i++) // Checks diagonal descending products
+   for (int i=0; i<17; i++) // Checks diagonal ascending products
    {
 	for (int j=3; j<20; j++)
 	{
@@ -275,4 +275,31 @@ int euler11()
 	}	
    }
    return highProd; 
+}
+
+// Returns the first triangle number to have over five hundred divisors
+int euler12()
+{
+   int const DIVISORS_TARGET = 500;
+   int numDivisors = 0,
+       triNum = 2,
+       triNumVal = 3;
+
+   while (numDivisors <= DIVISORS_TARGET)
+   {
+	numDivisors = 0;
+	for (int i=1; i<(int(sqrt(double(triNumVal)))+1); i++)
+	{
+	   if (triNumVal % i == 0)
+	   { numDivisors++; }
+	}
+	numDivisors *= 2; // Formula in above loop finds half the divisors (since only goes up to square root of tested number
+	if (numDivisors <= DIVISORS_TARGET)
+	{
+	   triNumVal = 0;
+	   triNum++;
+	   triNumVal = (triNum * (triNum+1)) / 2; // Formula to calculate a triangle number
+	}
+   }
+   return triNumVal;
 }

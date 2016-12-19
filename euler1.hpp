@@ -17,3 +17,4 @@ long euler8();
 int euler9();
 long euler10();
 int euler11();
+int euler12();
